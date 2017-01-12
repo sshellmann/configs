@@ -8,7 +8,6 @@
 	email = sshellman@gmail.com
 	name = Scott Hellmann
 [core]
-	excludesfile = /home/opcenter/.gitignore
 	pager = "less -F -X"
 	editor = vim
 [diff]
