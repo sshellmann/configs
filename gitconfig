@@ -1,0 +1,26 @@
+[alias]
+	s = status --short
+	changes = "!echo 'Changes:'; git diff --name-status -r remotes/trunk; echo \"\nSummary: $(git diff --shortstat remotes/trunk)\n\""
+	changelog = "!git log $(git rev-parse --abbrev-ref HEAD) ^remotes/trunk --no-merges"
+	differ = "!f(){ git diff --name-status $1^ $1; };f"
+	serve = "!klaus --host=0.0.0.0 --port=8080 $(git rev-parse --show-toplevel)"
+[user]
+	email = sshellman@gmail.com
+	name = Scott Hellmann
+[core]
+	excludesfile = /home/opcenter/.gitignore
+	pager = "less -F -X"
+	editor = vim
+[diff]
+	external = gitdiff.sh
+[pager]
+	diff =
+[log]
+	abbrevCommit = true
+	decorate = full
+[color]
+	ui = auto
+[format]
+	pretty = "%an - %ar - %H - %s"
+[pull]
+	rebase = true
